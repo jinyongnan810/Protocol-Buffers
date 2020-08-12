@@ -1,0 +1,34 @@
+syntax = "proto3";
+// imports (from the root of project)
+import "basics/date.proto";
+
+package person; // note: difference package name with date.proto
+
+message Person {
+  int32 age = 1;         // fi32
+  string first_name = 2; // fst
+  string last_name = 3;
+  bytes avatar = 4;                  // bytes used to save small files
+  bool is_profile_valid = 5;         // fbo
+  float height = 6;                  // ffl
+  repeated string phone_numbers = 7; // list
+  enum EyeColor {                    // claim an enum
+    UNKNOWN = 0;                     // default
+    GREEN = 1;
+    BROWN = 2;
+    BLUE = 3;
+  }
+  EyeColor eye_color = 8; // a field of enum type
+  my.date.Date biethday =
+      9; // use Date structure (using package name as prefix)
+  // nested type
+  message Address { // full name will be Person.Address to the outsiders
+    string address_line_1 = 1;
+    string address_line_2 = 2;
+    string zip_code = 3;
+    string state = 4;
+    string country = 5;
+  }
+  // using the nested type
+  Address address = 10;
+}
