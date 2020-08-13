@@ -1,0 +1,2 @@
+protobuf
+protobuf3-to-dict==0.1.5

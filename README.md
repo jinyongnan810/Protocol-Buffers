@@ -7,3 +7,5 @@ go get -u google.golang.org/protobuf/cmd/protoc-gen-go
 go install google.golang.org/protobuf/cmd/protoc-gen-go
 go mod init example.com/protos # for imports
 ~~~~
+#### python 
+`pip install -r requirements.txt`
